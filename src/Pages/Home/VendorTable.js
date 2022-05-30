@@ -10,7 +10,7 @@ const VendorTable = ({ vendor, index }) => {
     const handleVendor = () => {
         const change = 'Confirm';
         setReq(change)
-        const proceed = window.confirm('Confirm for order purchase?');
+        const proceed = window.confirm('Are You Confirm?');
         if (proceed) {
             const url = `http://localhost:5000/purchase`;
             fetch(url, {

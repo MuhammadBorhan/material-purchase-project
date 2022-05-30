@@ -44,7 +44,7 @@ const Navbar = () => {
                         </a>
                         <ul className="bg-purple-800 p-2">
                             <li><Link to='/purchasepage'>Purchase</Link></li>
-                            <li><a>Vendors</a></li>
+                            <li><Link to='vendors'>Vendors</Link></li>
                         </ul>
                     </li>
                     <li tabIndex="0">

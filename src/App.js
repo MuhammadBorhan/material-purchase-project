@@ -14,6 +14,9 @@ import Register from './Pages/LogingPage/Register';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Products from './Pages/Products/Products';
 import NewProduct from './Pages/Products/NewProduct';
+import Vendors from './Pages/Vendors/Vendors';
+import VendorsInfo from './Pages/Vendors/VendorsInfo';
+import VendorsProduct from './Pages/Vendors/VendorsProduct';
 
 function App() {
   return (
@@ -33,6 +36,10 @@ function App() {
         {/* <Route path='/register' element={<Register></Register>}></Route> */}
         <Route path='/allproduct' element={<Products></Products>}>
           <Route path='newproduct' element={<NewProduct></NewProduct>}></Route>
+        </Route>
+        <Route path='vendors' element={<Vendors></Vendors>}>
+          <Route index element={<VendorsInfo></VendorsInfo>}></Route>
+          <Route path='vendorsproduct' element={<VendorsProduct></VendorsProduct>}></Route>
         </Route>
 
       </Routes>
