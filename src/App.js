@@ -13,6 +13,7 @@ import Signin from './Pages/LogingPage/Signin';
 import Register from './Pages/LogingPage/Register';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Products from './Pages/Products/Products';
+import NewProduct from './Pages/Products/NewProduct';
 
 function App() {
   return (
@@ -30,7 +31,10 @@ function App() {
         </Route>
         {/* <Route path='/signin' element={<Signin></Signin>}></Route> */}
         {/* <Route path='/register' element={<Register></Register>}></Route> */}
-        <Route path='/allproduct' element={<Products></Products>}></Route>
+        <Route path='/allproduct' element={<Products></Products>}>
+          <Route path='newproduct' element={<NewProduct></NewProduct>}></Route>
+        </Route>
+
       </Routes>
       <ToastContainer />
     </div>
