@@ -3,9 +3,10 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation, useParams } from 'react-router-dom';
 
 const Signin = () => {
+    const { id } = useParams();
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
@@ -35,7 +36,7 @@ const Signin = () => {
         <div className='flex items-center h-screen justify-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-3xl font-bold">Login</h2>
+                    <h2 className="text-center text-3xl font-bold">SignIn</h2>
                     <div className="flex flex-col w-full border-opacity-50">
                         <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -88,7 +89,7 @@ const Signin = () => {
                             <p className='text-red-500 font-bold text-center'>{errorMessage}</p>
                             <input className='btn w-full max-w-xs text-white font-bold' type="submit" value='Login' />
                         </form>
-                        <p className='text-bold mt-2'>Don't have an account? <Link className='text-primary font-bold' to='/register'>Create new account</Link> </p>
+                        <p className='text-bold mt-2'>Don't have an account? <Link className='text-primary font-bold' to={`/invoice/${id}/register`}>Create new account</Link> </p>
                         <div className="divider">OR</div>
                         <button onClick={() => signInWithGoogle()} className="btn btn-outline text-primary font-bold text-xl">Signin with google</button>
                     </div>

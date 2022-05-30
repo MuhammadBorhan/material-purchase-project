@@ -3,9 +3,10 @@ import { useAuthState, useSignInWithGoogle, useUpdateProfile } from 'react-fireb
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const Register = () => {
+    const { id } = useParams();
     const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -108,7 +109,7 @@ const Register = () => {
                             <p className='text-red-500 font-bold text-center'>{errorMessage}</p>
                             <input className='btn w-full max-w-xs text-white font-bold' type="submit" value='Login' />
                         </form>
-                        <p className='text-bold mt-2'>Already have an account? <Link className='text-primary font-bold' to='/signin'>Please signin</Link> </p>
+                        <p className='text-bold mt-2'>Already have an account? <Link className='text-primary font-bold' to={`/invoice/${id}/signin`}>Please signin</Link> </p>
                         <div className="divider">OR</div>
                         <button onClick={() => signInWithGoogle()} className="btn btn-outline text-primary font-bold text-xl">Signin with google</button>
                     </div>

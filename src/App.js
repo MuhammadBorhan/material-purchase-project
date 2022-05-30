@@ -12,6 +12,7 @@ import InvoiceAddProduct from './Pages/Home/InvoiceAddProduct';
 import Signin from './Pages/LogingPage/Signin';
 import Register from './Pages/LogingPage/Register';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import Products from './Pages/Products/Products';
 
 function App() {
   return (
@@ -24,9 +25,12 @@ function App() {
         <Route path='/invoice/:id' element={<Invoice></Invoice>}>
           <Route index element={<InvoiceProduct></InvoiceProduct>}></Route>
           <Route path='invoiceaddproduct' element={<PrivateRoute><InvoiceAddProduct></InvoiceAddProduct></PrivateRoute>}></Route>
+          <Route path='signin' element={<Signin></Signin>}></Route>
+          <Route path='register' element={<Register></Register>}></Route>
         </Route>
-        <Route path='/signin' element={<Signin></Signin>}></Route>
-        <Route path='/register' element={<Register></Register>}></Route>
+        {/* <Route path='/signin' element={<Signin></Signin>}></Route> */}
+        {/* <Route path='/register' element={<Register></Register>}></Route> */}
+        <Route path='/allproduct' element={<Products></Products>}></Route>
       </Routes>
       <ToastContainer />
     </div>

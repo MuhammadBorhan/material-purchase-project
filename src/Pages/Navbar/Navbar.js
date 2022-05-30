@@ -53,7 +53,7 @@ const Navbar = () => {
                             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                         </a>
                         <ul className="bg-purple-800 p-2">
-                            <li><a>Product</a></li>
+                            <li><Link to='allproduct'>Product</Link></li>
                             <li><a>Product Variant</a></li>
                         </ul>
                     </li>
@@ -61,12 +61,12 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <ul>
+                {/* <ul>
                     {
                         user ? <li className='mr-6'><button onClick={logout} className='text-xl font-bold'>Logout</button></li> : <li className='mr-6'><Link to='signin'>Signin</Link></li>
                     }
-                </ul>
-                <h4>{user?.displayName || user?.name}</h4>
+                </ul> */}
+                <h4>{user ? user?.displayName || user?.name : 'Three Brothers LTD'}</h4>
             </div>
 
         </div>

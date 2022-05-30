@@ -1,7 +1,14 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet, useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Invoice = () => {
+    const [user] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+    }
     const [invoices, setInvoices] = useState({});
     const { id } = useParams();
 
@@ -42,8 +49,15 @@ const Invoice = () => {
                 </div>
 
                 <div className='mt-8'>
-                    <Link to={`/invoice/${id}`}> <button class="btn btn-ghost btn-outline btn-info mr-2">Products</button></Link>
-                    <Link to={`/invoice/${id}/invoiceaddproduct`}><button class="btn btn-ghost btn-outline btn-info ">Add Products</button></Link>
+                    <Link to={`/invoice/${id}`}> <button className="btn btn-ghost btn-outline btn-info font-bold mr-2">Products</button></Link>
+                    <Link to={`/invoice/${id}/invoiceaddproduct`}><button className="btn btn-ghost btn-outline btn-info font-bold mr-2">Add Products</button></Link>
+                    {
+                        user ? <button className="btn btn-ghost btn-outline btn-error font-bold" onClick={logout}>Logout</button> : <Link to={`/invoice/${id}/signin`}><button className="btn btn-ghost btn-outline btn-info font-bold ">Signin</button></Link>
+                    }
+                    {/* <Link to={`/invoice/${id}/register`}><button className="btn btn-ghost btn-outline btn-info ">Register</button></Link> */}
+
+
+
                 </div>
                 <Outlet></Outlet>
             </div>
