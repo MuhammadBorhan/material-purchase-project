@@ -3,6 +3,7 @@ import PurchaseTable from './PurchaseTable';
 
 const PurchasePage = () => {
     const [purchase, setPurchase] = useState([]);
+
     useEffect(() => {
         const url = `http://localhost:5000/purchase`;
         fetch(url)

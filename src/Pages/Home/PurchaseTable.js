@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const PurchaseTable = ({ vendor, index }) => {
+const PurchaseTable = ({ vendor, index, setTotal }) => {
     const { _id, name, referencef, date, company, representive, price } = vendor;
     const navigate = useNavigate();
 

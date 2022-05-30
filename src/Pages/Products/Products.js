@@ -4,13 +4,17 @@ import SingleProduct from './SingleProduct';
 
 const Products = () => {
     const [product, setProducts] = useState([]);
+    const [relode, setRelode] = useState(false);
     useEffect(() => {
         const url = `http://localhost:5000/products`;
         fetch(url)
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => {
+                setProducts(data)
+                setRelode(!relode)
+            })
 
-    }, []);
+    }, [relode]);
     return (
         <div className='px-12 py-8'>
             <Link to='/allproduct'><button class="btn bg-purple-800 ml-4 mt-4">Products</button></Link>
