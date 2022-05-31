@@ -18,6 +18,8 @@ import Vendors from './Pages/Vendors/Vendors';
 import VendorsInfo from './Pages/Vendors/VendorsInfo';
 import VendorsProduct from './Pages/Vendors/VendorsProduct';
 import OwnersProduct from './Pages/Products/OwnersProduct';
+import ProductVariants from './Pages/Vendors/ProductVariants';
+import AllProductVariants from './Pages/Products/AllProductVariants';
 
 function App() {
   return (
@@ -39,9 +41,11 @@ function App() {
           <Route path='newproduct' element={<NewProduct></NewProduct>}></Route>
         </Route>
         <Route path='ownproduct' element={<OwnersProduct></OwnersProduct>}></Route>
+        <Route path='allproductvariant' element={<AllProductVariants></AllProductVariants>}></Route>
         <Route path='vendors' element={<Vendors></Vendors>}>
           <Route index element={<VendorsInfo></VendorsInfo>}></Route>
           <Route path='vendorsproduct' element={<VendorsProduct></VendorsProduct>}></Route>
+          <Route path='vendorprovariant' element={<ProductVariants></ProductVariants>}></Route>
         </Route>
 
       </Routes>
