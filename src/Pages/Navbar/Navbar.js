@@ -1,5 +1,5 @@
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -7,9 +7,25 @@ import { FaHome } from 'react-icons/fa';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    const [relode, setRelode] = useState(false);
     const logout = () => {
         signOut(auth);
     }
+
+    const [purchase, setPurchase] = useState([]);
+
+    useEffect(() => {
+        const url = `http://localhost:5000/purchase`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+
+                setPurchase(data);
+                setRelode(!relode);
+
+            })
+
+    }, [relode]);
     return (
         <div className="navbar bg-purple-800 px-12 text-white font-bold z-10">
             <div className="navbar-start">
@@ -41,6 +57,12 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li><a>Reporting</a></li>
+                        <li><a>
+                            <div class="indicator">
+                                <span class="indicator-item badge badge-secondary">{purchase.length}</span>
+                                <Link to='/purchasepage'><button class="btn bg-transparent border-0 font-bold">Vendor Select</button></Link>
+                            </div>
+                        </a></li>
                     </ul>
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-3xl">Purchase</Link>
@@ -70,6 +92,12 @@ const Navbar = () => {
                         </ul>
                     </li>
                     <li><a>Reporting</a></li>
+                    <li><a>
+                        <div class="indicator">
+                            <span class="indicator-item badge badge-secondary">{purchase.length}</span>
+                            <Link to='/purchasepage'><button class="btn bg-transparent border-0 font-bold capitalize">Vendor Select</button></Link>
+                        </div>
+                    </a></li>
                 </ul>
             </div>
             <div className="navbar-end">

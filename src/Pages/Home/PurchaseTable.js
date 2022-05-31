@@ -16,7 +16,6 @@ const PurchaseTable = ({ vendor, index, setTotal }) => {
             <td>{name}</td>
             <td>{company}</td>
             <td>{representive}</td>
-            <td>BDT {price}</td>
         </tr>
     );
 };

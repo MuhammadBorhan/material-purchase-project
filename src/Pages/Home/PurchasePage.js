@@ -13,7 +13,7 @@ const PurchasePage = () => {
     }, []);
     return (
         <div className='py-4 px-12'>
-            <h2 className=' font-bold text-xl ml-4 mb-3'>Purchase Order</h2>
+            <h2 className=' font-bold text-xl ml-4 mb-3'>Selected Vendor</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -24,7 +24,6 @@ const PurchasePage = () => {
                             <th>Vendor</th>
                             <th>Company</th>
                             <th>Purchase Representive</th>
-                            <th>Total</th>
                         </tr>
                     </thead>
                     <tbody>
