@@ -54,6 +54,7 @@ const Navbar = () => {
                         </a>
                         <ul className="bg-purple-800 p-2">
                             <li><Link to='allproduct'>Product</Link></li>
+                            <li><Link to='ownproduct'>Owners Product</Link></li>
                             <li><a>Product Variant</a></li>
                         </ul>
                     </li>

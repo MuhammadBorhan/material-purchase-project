@@ -17,7 +17,7 @@ const Products = () => {
     }, [relode]);
     return (
         <div className='px-12 py-8'>
-            <Link to='/allproduct'><button class="btn bg-purple-800 ml-4 mt-4">Products</button></Link>
+            <Link to='/allproduct'><button class="btn bg-purple-800 ml-4 mt-4">All Products</button></Link>
             <Link to='/allproduct/newproduct'><button class="btn bg-purple-800 ml-4 mt-4">Create</button></Link>
             <Outlet></Outlet>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
