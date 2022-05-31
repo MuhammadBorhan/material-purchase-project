@@ -23,7 +23,8 @@ const SingleProduct = ({ pd }) => {
         }
     }
     return (
-        <Link to=''>
+
+        <div>
             <div class="card card-side bg-base-100 shadow-xl p-4">
                 <figure><img className='w-24' src={img} alt="Movie" /></figure>
                 <div class="card-body">
@@ -32,8 +33,11 @@ const SingleProduct = ({ pd }) => {
                 <div className='flex items-center'>
                     <button onClick={() => handleDelete(_id)} className='bg-gray-300 p-2 rounded-full w-12 h-12 flex justify-center items-center justify-items-center'><span className='text-red-600 text-2xl font-bold'><FaTrashAlt /></span></button>
                 </div>
+
             </div>
-        </Link>
+            <Link to={`/productinfo/${_id}`}><button className='btn block mx-auto mt-2'>More Details</button></Link>
+        </div>
+
     );
 };
 
