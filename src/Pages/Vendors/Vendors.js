@@ -18,7 +18,7 @@ const Vendors = () => {
                     <ul class="menu mt-12 p-4 overflow-y-auto w-60 bg-base-100 text-base-content">
                         <button className='btn btn-primary font-bold mb-2'> <li><Link to='/vendors'>Vendor's Info</Link></li></button>
                         <button className='btn btn-info font-bold mb-2'> <li><Link to='/vendors/vendorsproduct'>Vendor's Product</Link></li></button>
-                        <button className='btn btn-secondary font-bold'> <li><Link to='/vendors/vendorprovariant'>Product List</Link></li></button>
+                        <button className='btn btn-secondary font-bold'> <li><Link to='/vendors/vendorprovariant'>Product Price List</Link></li></button>
                     </ul>
 
                 </div>

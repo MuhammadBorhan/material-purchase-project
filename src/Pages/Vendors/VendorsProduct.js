@@ -22,7 +22,6 @@ const VendorsProduct = () => {
                             <figure><img className='w-24' src={pd.img} alt="Movie" /></figure>
                             <div class="card-body">
                                 <h2 class="">Product: {pd.product}</h2>
-                                <p>Price: BDT {pd.price}</p>
                             </div>
                         </div>
                     </div>)

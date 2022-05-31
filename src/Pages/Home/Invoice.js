@@ -1,10 +1,12 @@
 import { signOut } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
+import ReactToPrint from 'react-to-print';
 
 const Invoice = () => {
+    const componentRef = useRef();
     const [user] = useAuthState(auth);
     const logout = () => {
         signOut(auth);
@@ -22,7 +24,12 @@ const Invoice = () => {
     }, [id]);
     return (
         <div className='m-12'>
-            <div className='px-12 py-8 border-2'>
+            <ReactToPrint
+                trigger={() => <button className='btn btn-active btn-ghost mb-2 block lowercase ml-auto'>Print</button>}
+                content={() => componentRef.current}
+            />
+
+            <div ref={componentRef} className='px-12 py-8 border-2'>
                 <h1 className='text-xl font-bold text-lime-700'>Purchase Order</h1>
                 <h3 className='text-2xl font-bold'>{invoices.referencef}</h3>
                 <div className='flex justify-around'>
