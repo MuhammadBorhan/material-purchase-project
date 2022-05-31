@@ -30,12 +30,13 @@ const SingleProduct = ({ pd }) => {
                 <div class="card-body">
                     <h2 class="">Product: {product}</h2>
                 </div>
-                <div className='flex items-center'>
-                    <button onClick={() => handleDelete(_id)} className='bg-gray-300 p-2 rounded-full w-12 h-12 flex justify-center items-center justify-items-center'><span className='text-red-600 text-2xl font-bold'><FaTrashAlt /></span></button>
+                <div className='flex items-center justify-center gap-2'>
+                    <Link to={`/productinfo/${_id}`}><button className='btn btn-active btn-ghost mt-2 lowercase'>More Info</button></Link>
+                    <button onClick={() => handleDelete(_id)} className='bg-gray-300 p-2 rounded-full w-10 h-10 flex justify-center items-center justify-items-center'><span className='text-red-600 text-2xl font-bold'><FaTrashAlt /></span></button>
                 </div>
 
             </div>
-            <Link to={`/productinfo/${_id}`}><button className='btn block mx-auto mt-2'>More Details</button></Link>
+
         </div>
 
     );

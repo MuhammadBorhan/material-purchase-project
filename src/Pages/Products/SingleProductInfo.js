@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { FaBackward } from 'react-icons/fa';
 
 const SingleProductInfo = () => {
     const { id } = useParams();
@@ -23,7 +24,7 @@ const SingleProductInfo = () => {
                     <p>Quantity: {products.quantity} Pcs</p>
                     <p>total: {products.price * products.quantity} BDT</p>
                     <div class="card-actions">
-                        <Link to='/allproduct'><button class="btn btn-gost">Back</button></Link>
+                        <Link to='/allproduct'><button class="btn btn-gost"> <span className='mr-2'><FaBackward /></span>Go Back</button></Link>
                     </div>
                 </div>
             </div>

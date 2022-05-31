@@ -3,6 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import { FaHome } from 'react-icons/fa';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -36,7 +37,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0 z-10">
-                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/'> <span><FaHome /></span>Home</Link></li>
                     <li tabIndex="0">
                         <a>
                             Orders
