@@ -4,12 +4,12 @@ import { toast } from 'react-toastify';
 
 const VendorTable = ({ vendor, index }) => {
     const { name, referencef, date, company, representive, price } = vendor;
-    const quotation = 'RFQ';
-    const [req, setReq] = useState(quotation)
+    // const quotation = 'RFQ';
+    // const [req, setReq] = useState(quotation)
 
     const handleVendor = () => {
-        const change = 'Confirm';
-        setReq(change)
+        // const change = 'Confirm';
+        // setReq(change)
         const proceed = window.confirm('Are You Confirm?');
         if (proceed) {
             const url = `http://localhost:5000/purchase`;
@@ -40,8 +40,7 @@ const VendorTable = ({ vendor, index }) => {
             <td>{name}</td>
             <td>{company}</td>
             <td>{representive}</td>
-            <td>BDT {price}</td>
-            <td>{req}</td>
+            {/* <td>BDT {price}</td> */}
         </tr>
     );
 };

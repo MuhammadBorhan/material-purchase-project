@@ -23,8 +23,7 @@ const ManageVendor = () => {
                                 <th>Vendor</th>
                                 <th>Company</th>
                                 <th>Purchase Representive</th>
-                                <th>Total</th>
-                                <th>status</th>
+                                {/* <th>Total</th> */}
                             </tr>
                         </thead>
                         <tbody>
