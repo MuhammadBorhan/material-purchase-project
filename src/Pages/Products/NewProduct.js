@@ -9,8 +9,9 @@ const NewProduct = () => {
         const price = event.target.price.value;
         const quantity = event.target.quantity.value;
         const img = event.target.img.value;
+        const secret = event.target.secret.value;
 
-        const addItem = { product, price, quantity, img };
+        const addItem = { product, price, quantity, img, secret };
 
         const url = `http://localhost:5000/products`;
         fetch(url, {
@@ -33,6 +34,7 @@ const NewProduct = () => {
                 <input type="text" name='price' placeholder='Price' className="input input-bordered w-full max-w-xs" />
                 <input type="text" name='quantity' placeholder="Product Quantity" className="input input-bordered w-full max-w-xs" />
                 <input type="text" name='img' placeholder="Product Image" className="input input-bordered w-full max-w-xs" />
+                <input type="text" name='secret' placeholder="Secret Code" className="input input-bordered w-full max-w-xs" />
                 <input type="submit" value='Add' className="btn input-bordered w-full max-w-xs" />
             </form>
         </div>
