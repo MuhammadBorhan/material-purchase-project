@@ -56,7 +56,7 @@ const Navbar = () => {
                                 <li><Link to='allproductvariant'>Product Variant</Link></li>
                             </ul>
                         </li>
-                        <li><a>Reporting</a></li>
+                        <li><Link to='/report'>Reporting</Link></li>
                         <li><a>
                             <div class="indicator">
                                 <span class="indicator-item badge badge-secondary">{purchase.length}</span>
@@ -91,7 +91,7 @@ const Navbar = () => {
                             <li><Link to='allproductvariant'>Product Variant</Link></li>
                         </ul>
                     </li>
-                    <li><a>Reporting</a></li>
+                    <li><Link to='/report'>Reporting</Link></li>
                     <li><a>
                         <div class="indicator">
                             <span class="indicator-item badge badge-secondary">{purchase.length}</span>
@@ -101,11 +101,6 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {/* <ul>
-                    {
-                        user ? <li className='mr-6'><button onClick={logout} className='text-xl font-bold'>Logout</button></li> : <li className='mr-6'><Link to='signin'>Signin</Link></li>
-                    }
-                </ul> */}
                 <h4>{user ? user?.displayName || user?.name : 'Three Brothers LTD'}</h4>
             </div>
 

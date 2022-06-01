@@ -11,7 +11,8 @@ const InvoiceProduct = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
 
-    }, []);
+    }, [id]);
+
     return (
         <div className='py-4'>
             <div class="overflow-x-auto">
